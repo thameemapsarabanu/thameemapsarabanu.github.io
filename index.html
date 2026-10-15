@@ -1032,10 +1032,12 @@ async function handleForm(e){
   btn.disabled=true;
   btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
   try{
+    const fd=new FormData(form);
+    const payload={name:fd.get('name'),email:fd.get('email'),message:fd.get('message')};
     const res=await fetch('https://formspree.io/f/mrpeokny',{
       method:'POST',
-      body:new FormData(form),
-      headers:{Accept:'application/json'}
+      body:JSON.stringify(payload),
+      headers:{Accept:'application/json','Content-Type':'application/json'}
     });
     const data=await res.json();
     console.log('Formspree status:',res.status,'response:',JSON.stringify(data));
