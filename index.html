@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thameem Apsara Banu — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#07091a;--bg2:#0c0e22;--bg3:#111428;
+  --p:#7c3aed;--pl:#a855f7;--c:#06b6d4;--cl:#22d3ee;--a:#f59e0b;
+  --t:#f1f5f9;--tm:#8896b0;--ts:#4a5568;
+  --g:rgba(255,255,255,0.04);--gb:rgba(255,255,255,0.09);
+  --gp:rgba(124,58,237,0.3);--gc:rgba(6,182,212,0.25);--ga:rgba(245,158,11,0.25);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--p);border-radius:2px}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.85rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(7,9,26,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--gb)}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;background:linear-gradient(135deg,var(--pl),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.855rem;font-weight:500;color:var(--tm);transition:color .2s}
+.nav-links a:hover{color:var(--t)}
+.nav-cta{padding:.45rem 1.1rem;background:var(--p)!important;color:#fff!important;border-radius:8px;font-size:.8rem!important}
+.nav-cta:hover{background:var(--pl)!important}
+.ham{display:none;flex-direction:column;gap:4px;cursor:pointer}
+.ham span{width:20px;height:2px;background:var(--t);border-radius:2px}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 3rem 4rem;gap:2rem;position:relative;overflow:hidden}
+.hero-bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 12% 60%,rgba(124,58,237,.13) 0%,transparent 55%),radial-gradient(ellipse at 88% 20%,rgba(6,182,212,.07) 0%,transparent 50%);pointer-events:none}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.hero-left{position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:.45rem;padding:.32rem .9rem;background:var(--g);border:1px solid var(--gb);border-radius:100px;font-size:.72rem;color:var(--c);margin-bottom:1.5rem;letter-spacing:.07em;text-transform:uppercase;font-weight:700}
+.badge-dot{width:6px;height:6px;background:var(--c);border-radius:50%;animation:pls 2s infinite}
+@keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+h1.hero-name{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:700;line-height:1.08;letter-spacing:-.035em;margin-bottom:.4rem}
+.hero-name .grad{background:linear-gradient(135deg,var(--pl) 0%,var(--c) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-typed-row{font-size:1.1rem;color:var(--tm);margin-bottom:1.5rem;min-height:1.9rem;display:flex;align-items:center}
+.tw{color:var(--pl);font-weight:600;font-family:'Space Grotesk',sans-serif}
+.cur{display:inline-block;width:2px;height:1em;background:var(--pl);margin-left:2px;animation:bl .7s infinite;vertical-align:middle}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{font-size:.935rem;color:var(--tm);max-width:460px;margin-bottom:2.5rem;line-height:1.85}
+.hero-desc b{color:var(--t);font-weight:500}
+.btns{display:flex;gap:.85rem;flex-wrap:wrap}
+.btn-p{padding:.78rem 1.7rem;background:linear-gradient(135deg,var(--p),var(--pl));color:#fff;border:none;border-radius:11px;font-size:.88rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;transition:.3s;box-shadow:0 0 30px var(--gp);font-family:'Inter',sans-serif}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 0 50px var(--gp)}
+.btn-o{padding:.78rem 1.7rem;background:transparent;color:var(--t);border:1px solid var(--gb);border-radius:11px;font-size:.88rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;transition:.3s;font-family:'Inter',sans-serif}
+.btn-o:hover{border-color:var(--pl);color:var(--pl);background:rgba(124,58,237,.07)}
+/* ── HERO RIGHT: 3D SCENE ── */
+.hero-right{position:relative;height:520px;display:flex;align-items:center;justify-content:center}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%}
+.float-cards{position:absolute;inset:0;pointer-events:none;z-index:2}
+.fcard{position:absolute;background:rgba(255,255,255,.04);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:1rem 1.15rem;text-align:center;pointer-events:auto;transition:border-color .3s,box-shadow .3s;min-width:110px}
+.fcard:hover{border-color:rgba(168,85,247,.5);box-shadow:0 0 30px rgba(124,58,237,.25);transform:scale(1.06)!important}
+.fcard-ico{font-size:1.1rem;margin-bottom:.35rem;display:block}
+.fcard-n{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.4rem;background:linear-gradient(135deg,var(--pl),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.fcard-l{font-size:.63rem;color:var(--tm);margin-top:.2rem;font-weight:500;line-height:1.3}
+.fcard-1{top:6%;right:8%;color:var(--pl);animation:fcf1 5s ease-in-out infinite}
+.fcard-2{top:42%;right:0%;color:var(--c);animation:fcf2 6.5s ease-in-out infinite}
+.fcard-3{bottom:8%;right:12%;color:#34d399;animation:fcf3 5.8s ease-in-out infinite}
+.fcard-4{top:18%;left:2%;color:var(--a);animation:fcf4 7s ease-in-out infinite}
+@keyframes fcf1{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+@keyframes fcf2{0%,100%{transform:translateY(0) rotate(4deg)}50%{transform:translateY(-10px) rotate(-2deg)}}
+@keyframes fcf3{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(3deg)}}
+@keyframes fcf4{0%,100%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-12px) rotate(-3deg)}}
+@media(max-width:768px){.hero-right{height:280px}.fcard{min-width:80px;padding:.6rem .75rem}.fcard-n{font-size:1rem}.fcard-l{font-size:.55rem}.fcard-1{top:2%;right:2%}.fcard-2{display:none}.fcard-3{bottom:2%;right:2%}.fcard-4{top:25%;left:0%}}
+
+/* ── MESH BACKGROUND ── */
+.mesh-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+body{isolation:isolate}
+.mesh-bg{z-index:-1}
+.mesh-orb{position:absolute;border-radius:50%;filter:blur(90px)}
+.m1{width:700px;height:700px;background:radial-gradient(circle,rgba(124,58,237,.1) 0%,transparent 70%);top:-200px;left:-150px;animation:driftA 22s ease-in-out infinite}
+.m2{width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.07) 0%,transparent 70%);top:35%;right:-200px;animation:driftB 26s ease-in-out infinite}
+.m3{width:500px;height:500px;background:radial-gradient(circle,rgba(245,158,11,.04) 0%,transparent 70%);bottom:-80px;left:20%;animation:driftC 24s ease-in-out infinite}
+@keyframes driftA{0%,100%{transform:translate(0,0)}50%{transform:translate(90px,55px)}}
+@keyframes driftB{0%,100%{transform:translate(0,0)}50%{transform:translate(-80px,90px)}}
+@keyframes driftC{0%,100%{transform:translate(0,0)}50%{transform:translate(55px,-65px)}}
+
+/* ── CUSTOM CURSOR ── */
+#cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);will-change:transform}
+#cd{width:8px;height:8px;background:var(--pl);transition:width .18s,height .18s,background .18s,opacity .18s}
+#cr{width:34px;height:34px;border:1.5px solid rgba(168,85,247,.55);transition:width .22s,height .22s,border-color .22s,opacity .22s}
+#cd.hover{width:14px;height:14px;background:var(--c)}
+#cr.hover{width:52px;height:52px;border-color:var(--c);opacity:.5}
+#cd.click{width:6px;height:6px;background:#fff}
+@media(hover:none),@media(pointer:coarse){#cd,#cr{display:none}}
+
+/* ── SECTIONS ── */
+section{padding:5rem 3rem;position:relative}
+.sl{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--c);margin-bottom:.55rem}
+.st{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.75rem,3vw,2.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.2;margin-bottom:.7rem}
+.sd{color:var(--tm);max-width:580px;line-height:1.8;font-size:.92rem}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.3),rgba(6,182,212,.3),transparent);margin:0}
+
+/* ── ABOUT ── */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:3rem}
+.about-text p{color:var(--tm);line-height:1.85;margin-bottom:.9rem;font-size:.915rem}
+.about-text p b{color:var(--t);font-weight:500}
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.sc{background:var(--g);border:1px solid var(--gb);border-radius:16px;padding:1.4rem;transition:.3s;cursor:default}
+.sc:hover{border-color:rgba(124,58,237,.45);box-shadow:0 0 22px rgba(124,58,237,.12);transform:translateY(-3px)}
+.sn{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--pl),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.35rem}
+.sl2{font-size:.76rem;color:var(--tm);font-weight:500;line-height:1.4}
+
+/* ── SERVICES ── */
+#services{overflow:hidden}
+#services::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(124,58,237,.04) 0%,transparent 70%);pointer-events:none}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
+.svc-card{background:var(--g);border:1px solid var(--gb);border-radius:18px;padding:1.75rem;transition:.35s;position:relative;overflow:hidden}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--pl),transparent);opacity:0;transition:.3s}
+.svc-card:hover{border-color:rgba(124,58,237,.35);box-shadow:0 16px 50px rgba(124,58,237,.1);transform:translateY(-4px)}
+.svc-card:hover::after{opacity:1}
+.svc-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;color:#fff;margin-bottom:1rem}
+.ico-p{background:linear-gradient(135deg,var(--p),var(--pl));box-shadow:0 0 18px var(--gp)}
+.ico-c{background:linear-gradient(135deg,#0891b2,var(--c));box-shadow:0 0 18px var(--gc)}
+.ico-a{background:linear-gradient(135deg,#d97706,var(--a));box-shadow:0 0 18px var(--ga)}
+.ico-g{background:linear-gradient(135deg,#059669,#10b981);box-shadow:0 0 18px rgba(5,150,105,.25)}
+.svc-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:.55rem}
+.svc-card p{font-size:.845rem;color:var(--tm);line-height:1.75;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{padding:.2rem .55rem;font-size:.68rem;font-weight:600;border-radius:6px}
+.tp{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:var(--pl)}
+.tc{background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);color:var(--cl)}
+.ta{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);color:var(--a)}
+.tg{background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.2);color:#34d399}
+
+/* ── WORK / CASE STUDIES ── */
+#work{background:var(--bg2)}
+.filter-row{display:flex;gap:.6rem;flex-wrap:wrap;margin:2rem 0 1.5rem}
+.fb{padding:.5rem 1rem;border-radius:50px;font-size:.78rem;font-weight:600;border:1px solid var(--gb);color:var(--tm);background:transparent;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif}
+.fb.active{background:var(--p);border-color:var(--p);color:#fff}
+.fb:hover:not(.active){border-color:var(--pl);color:var(--t)}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.wc{background:var(--bg3);border:1px solid var(--gb);border-radius:16px;overflow:hidden;transition:.3s;cursor:pointer}
+.wc:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.wc-wide{grid-column:1/-1}
+/* Featured IdP card */
+.wc-featured{background:linear-gradient(135deg,rgba(30,27,75,.95),rgba(17,20,40,.98));border-color:rgba(168,85,247,.3)}
+.wc-featured:hover{box-shadow:0 24px 60px rgba(124,58,237,.2);border-color:rgba(168,85,247,.55)}
+@media(min-width:761px){.wc-featured{display:grid;grid-template-columns:260px 1fr}}
+.wc-featured .wtile{height:100%;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem}
+.wc-feat-badge{background:rgba(168,85,247,.18);border:1px solid rgba(168,85,247,.35);color:var(--pl);font-size:.65rem;font-weight:800;letter-spacing:.12em;padding:.3rem .75rem;border-radius:50px;text-transform:uppercase}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin:.85rem 0 1rem}
+.feat-item{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;font-size:.73rem;color:var(--tm);transition:.2s}
+.feat-item:hover{border-color:rgba(168,85,247,.35);color:var(--t);background:rgba(124,58,237,.07)}
+.feat-item i{width:14px;color:var(--pl);font-size:.72rem;flex-shrink:0}
+.feat-divider{height:1px;background:linear-gradient(90deg,rgba(168,85,247,.3),transparent);margin:.75rem 0}
+.wtile{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background-size:cover;background-position:center}
+.wtile::before{content:'';position:absolute;inset:0;opacity:.55;background-image:radial-gradient(circle,rgba(255,255,255,.08) 1px,transparent 1px);background-size:14px 14px;z-index:1}
+.wtile::after{content:'';position:absolute;inset:0;z-index:1}
+.wtile svg{position:relative;z-index:2}
+.wt1{background-image:linear-gradient(135deg,rgba(30,27,75,.92),rgba(124,58,237,.88)),url('https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop')}
+.wt2{background-image:linear-gradient(135deg,rgba(127,29,29,.92),rgba(220,38,38,.88)),url('https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop')}
+.wt3{background-image:linear-gradient(135deg,rgba(6,78,59,.92),rgba(5,150,105,.88)),url('https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop')}
+.wt4{background-image:linear-gradient(135deg,rgba(120,53,15,.92),rgba(245,158,11,.88)),url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop')}
+.wt5{background-image:linear-gradient(110deg,rgba(124,58,237,.9) 0%,rgba(6,182,212,.85) 50%,rgba(245,158,11,.9) 100%),url('https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1200&h=300&fit=crop')}
+.wtile svg{width:36px;height:36px;stroke:#fff;fill:none;stroke-width:1.4;position:relative;z-index:1}
+.wb{padding:1.35rem}
+.wtag{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c);margin-bottom:.5rem;display:block}
+.wstat{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.8rem;color:var(--t);margin-bottom:.2rem;line-height:1}
+.wc h3{font-family:'Space Grotesk',sans-serif;font-size:.98rem;font-weight:600;margin-bottom:.5rem;color:var(--t)}
+.wc p{font-size:.82rem;color:var(--tm);line-height:1.65;margin-bottom:.85rem}
+.wbullets{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem}
+.wbullets li{font-size:.8rem;color:var(--tm);padding-left:1.1rem;position:relative;line-height:1.5}
+.wbullets li::before{content:'';position:absolute;left:0;top:.45em;width:5px;height:5px;border-radius:50%;background:var(--pl)}
+.view-cs{font-size:.78rem;font-weight:700;color:var(--pl);display:flex;align-items:center;gap:.3rem;transition:.2s}
+.wc:hover .view-cs{gap:.55rem}
+.view-cs svg{width:12px;height:12px;stroke:var(--pl);transition:transform .2s}
+.wc:hover .view-cs svg{transform:translateX(3px)}
+.highlights-box{margin-top:1.5rem;background:var(--g);border:1px solid var(--gb);border-radius:14px;padding:1.5rem}
+.highlights-box h4{font-size:.85rem;font-weight:700;color:var(--t);margin-bottom:.85rem}
+.highlights-box ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.highlights-box li{font-size:.83rem;color:var(--tm);padding-left:1.1rem;position:relative;line-height:1.55}
+.highlights-box li::before{content:'';position:absolute;left:0;top:.45em;width:5px;height:5px;border-radius:50%;background:var(--c)}
+
+/* ── MODAL ── */
+.mo{position:fixed;inset:0;background:rgba(4,6,18,.75);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:1.5rem;z-index:999;opacity:0;pointer-events:none;transition:opacity .25s}
+.mo.open{opacity:1;pointer-events:auto}
+.mp{background:#0f1225;border:1px solid var(--gb);border-radius:20px;max-width:680px;width:100%;max-height:88vh;overflow-y:auto;padding:2.5rem;position:relative;transform:translateY(20px) scale(.98);transition:transform .3s}
+.mo.open .mp{transform:translateY(0) scale(1)}
+.mp::-webkit-scrollbar{width:3px}
+.mp::-webkit-scrollbar-thumb{background:var(--p);border-radius:2px}
+.mc{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:50%;background:var(--g);border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s}
+.mc:hover{border-color:var(--pl)}
+.mc svg{width:14px;height:14px;stroke:var(--tm)}
+.m-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c);margin-bottom:.4rem}
+.m-stat{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:2.4rem;color:var(--pl);line-height:1;margin:.35rem 0}
+.mp h2{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:var(--t);margin-bottom:.6rem;line-height:1.3}
+.m-meta{font-size:.78rem;color:var(--tm);margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--gb)}
+.msec{margin-bottom:1.4rem}
+.msec h4{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c);margin-bottom:.55rem}
+.msec p{font-size:.88rem;color:var(--tm);line-height:1.75}
+.msec ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-top:.4rem}
+.msec li{font-size:.86rem;color:var(--tm);padding-left:1.2rem;position:relative;line-height:1.6}
+.msec li::before{content:'';position:absolute;left:0;top:.5em;width:5px;height:5px;border-radius:50%;background:var(--pl)}
+.m-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+.m-tags span{font-size:.72rem;font-weight:600;color:var(--pl);background:rgba(124,58,237,.12);padding:.3rem .7rem;border-radius:50px;border:1px solid rgba(124,58,237,.25)}
+
+/* ── SKILLS ── */
+#skills{overflow:hidden}
+.sk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.5rem}
+.sk-cat h3{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--a);margin-bottom:.8rem}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.sk{padding:.32rem .75rem;background:var(--g);border:1px solid var(--gb);border-radius:8px;font-size:.77rem;color:var(--tm);font-weight:500;transition:.2s;cursor:default}
+.sk:hover{background:rgba(124,58,237,.1);border-color:var(--pl);color:var(--t);transform:translateY(-1px)}
+
+/* ── RECOGNITION ── */
+#recognition{background:var(--bg2)}
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.rec-card{background:var(--g);border:1px solid var(--gb);border-radius:14px;padding:1.4rem;border-top:3px solid transparent;transition:.3s}
+.rec-card:nth-child(1){border-top-color:var(--a)}
+.rec-card:nth-child(2){border-top-color:var(--pl)}
+.rec-card:nth-child(3){border-top-color:#34d399}
+.rec-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.rec-card h4{font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:600;color:var(--t);margin:.75rem 0 .35rem}
+.rec-card p{font-size:.78rem;color:var(--tm);line-height:1.5}
+.rec-ico{font-size:1.4rem}
+.spot-label{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--a);margin-top:2.5rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.spot-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(245,158,11,.3),transparent)}
+.spot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.spot-card{background:var(--g);border:1px solid var(--gb);border-radius:14px;padding:1.5rem;transition:.3s;position:relative;overflow:hidden}
+.spot-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--p),var(--pl),var(--c))}
+.spot-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(124,58,237,.15);border-color:rgba(168,85,247,.3)}
+.spot-q{font-size:.75rem;color:var(--t);line-height:1.75;font-style:italic;margin-bottom:1rem;position:relative;padding-left:1rem}
+.spot-q::before{content:'"';position:absolute;left:0;top:-.1rem;font-size:1.5rem;color:var(--pl);font-style:normal;line-height:1}
+.spot-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;color:var(--pl);background:rgba(124,58,237,.12);padding:.3rem .7rem;border-radius:50px;border:1px solid rgba(124,58,237,.25)}
+.spot-badge i{font-size:.65rem}
+@media(max-width:980px){.rec-grid{grid-template-columns:repeat(2,1fr)}.spot-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.rec-grid{grid-template-columns:1fr}}
+
+/* ── EDUCATION ── */
+#education{overflow:hidden}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+.edu-card{background:var(--g);border:1px solid var(--gb);border-radius:14px;padding:1.35rem;transition:.25s}
+.edu-card:hover{border-color:rgba(124,58,237,.35)}
+.edu-card .eco{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:.4rem}
+.edu-card h4{font-size:.9rem;font-weight:600;color:var(--t);margin-bottom:.3rem}
+.edu-card p{font-size:.8rem;color:var(--tm);line-height:1.5}
+.edu-card .emeta{font-size:.75rem;color:var(--a);font-weight:600;margin-top:.35rem}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem;align-items:start}
+.contact-info p{color:var(--tm);line-height:1.8;margin-bottom:2rem;font-size:.9rem}
+.c-links{display:flex;flex-direction:column;gap:.7rem}
+.c-link{display:flex;align-items:center;gap:.7rem;color:var(--tm);padding:.7rem 1rem;background:var(--g);border:1px solid var(--gb);border-radius:11px;transition:.25s;font-size:.84rem}
+.c-link:hover{border-color:var(--pl);color:var(--t);transform:translateX(4px);background:rgba(124,58,237,.06)}
+.c-link i{width:16px;color:var(--pl);flex-shrink:0}
+.c-form{display:flex;flex-direction:column;gap:.9rem}
+.fg{display:flex;flex-direction:column;gap:.3rem}
+.fg label{font-size:.75rem;color:var(--tm);font-weight:600;letter-spacing:.04em}
+.fg input,.fg textarea{background:var(--g);border:1px solid var(--gb);border-radius:10px;padding:.68rem .9rem;color:var(--t);font-family:'Inter',sans-serif;font-size:.86rem;transition:.2s;outline:none}
+.fg input:focus,.fg textarea:focus{border-color:var(--pl);box-shadow:0 0 0 3px rgba(124,58,237,.1)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(148,163,184,.35)}
+.fg textarea{resize:vertical;min-height:105px}
+
+/* ── FOOTER ── */
+footer{padding:1.5rem 3rem;border-top:1px solid var(--gb);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.85rem}
+.f-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;background:linear-gradient(135deg,var(--pl),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.f-copy{font-size:.76rem;color:var(--ts)}
+.f-soc{display:flex;gap:.55rem}
+.f-soc a{color:var(--tm);width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--g);border:1px solid var(--gb);border-radius:8px;transition:.2s;font-size:.78rem}
+.f-soc a:hover{border-color:var(--pl);color:var(--pl)}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  nav{padding:.85rem 1.25rem}
+  .nav-links{display:none}
+  .ham{display:flex}
+  #hero{grid-template-columns:1fr;padding:5.5rem 1.25rem 3rem;gap:0;text-align:center}
+  .hero-right{height:270px;order:-1;margin-bottom:.5rem}
+  .badge{margin:0 auto 1.25rem}
+  .hero-desc,.hero-typed-row{margin-inline:auto}
+  .btns{justify-content:center}
+  section{padding:3.5rem 1.25rem}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
+  .svc-grid,.work-grid,.rec-grid,.edu-grid,.sk-grid{grid-template-columns:1fr}
+  .wc-wide{grid-column:1}
+  footer{flex-direction:column;text-align:center;padding:1.5rem 1.25rem}
+  .mp{padding:1.75rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Mesh background orbs -->
+<div class="mesh-bg"><div class="mesh-orb m1"></div><div class="mesh-orb m2"></div><div class="mesh-orb m3"></div></div>
+
+<!-- Custom cursor -->
+<div id="cd"></div><div id="cr"></div>
+
+<nav>
+  <div class="logo">Apsara.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+  <div class="ham" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-dots"></div>
+
+  <div class="hero-left">
+    <div class="badge"><span class="badge-dot"></span>Available for Projects</div>
+    <h1 class="hero-name">Thameem<br><span class="grad">Apsara Banu</span></h1>
+    <div class="hero-typed-row">
+      <span id="tw" class="tw"></span><span class="cur"></span>
+    </div>
+    <p class="hero-desc">
+      <b>University Gold Medalist.</b> Former Product Manager at Hexnode (Mitsogo) — enterprise security shipped to Fortune 500 fleets of 30,000+ devices.
+      Now building websites, AI automations, and product strategy for founders and SMBs globally.
+    </p>
+    <div class="btns">
+      <a href="#work" class="btn-p"><i class="fa-solid fa-bolt-lightning"></i>View My Work</a>
+      <a href="#contact" class="btn-o"><i class="fa-regular fa-envelope"></i>Let's Connect</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <canvas id="hero-canvas"></canvas>
+    <div class="float-cards">
+      <div class="fcard fcard-1">
+        <span class="fcard-ico"><i class="fa-solid fa-shield-halved"></i></span>
+        <div class="fcard-n">15K+</div>
+        <div class="fcard-l">Devices Secured</div>
+      </div>
+      <div class="fcard fcard-2">
+        <span class="fcard-ico"><i class="fa-solid fa-rocket"></i></span>
+        <div class="fcard-n">8 Wks</div>
+        <div class="fcard-l">0-to-1 IdP Built</div>
+      </div>
+      <div class="fcard fcard-3">
+        <span class="fcard-ico"><i class="fa-solid fa-file-shield"></i></span>
+        <div class="fcard-n">100+</div>
+        <div class="fcard-l">CIS Rules Shipped</div>
+      </div>
+      <div class="fcard fcard-4">
+        <span class="fcard-ico"><i class="fa-solid fa-chart-line"></i></span>
+        <div class="fcard-n">60%</div>
+        <div class="fcard-l">Less Manual Work</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="rv">
+    <p class="sl">About Me</p>
+    <h2 class="st">Thinking like a PM.<br>Building like a founder.</h2>
+    <p class="sd">I don't just make things look good — I understand the business logic behind them.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-text rv">
+      <p>I'm <b>Thameem Apsara Banu</b>, a Web Designer, AI Automation specialist, and Product Manager based in <b>Chennai, India</b>.</p>
+      <p>I spent 3 years as a <b>Product Manager at Hexnode (Mitsogo)</b> — a B2B SaaS company — shipping enterprise security features across IAM, UEM, and compliance for IT fleets of 45,000+ devices globally. I shipped a full Identity Provider in 8 weeks, led the industry's first bidirectional ITSM–UEM integration, and delivered CEO-mandated product initiatives.</p>
+      <p>Now I run <b>For Your Spark</b>, where I bring that product discipline to web design, AI automation, and consulting projects. Most freelancers hand you a site. I ask why it needs to exist and what it needs to do.</p>
+      <p>University Gold Medalist — <b>CGPA 9.58 / 10</b>, B.E. Biomedical Engineering, Anna University.</p>
+    </div>
+    <div class="stats-row rv">
+      <div class="sc">
+        <div class="sn">3+</div>
+        <div class="sl2">Years in Enterprise B2B SaaS Product Management</div>
+      </div>
+      <div class="sc">
+        <div class="sn">45K+</div>
+        <div class="sl2">Devices managed across enterprise fleets globally</div>
+      </div>
+      <div class="sc">
+        <div class="sn">9.58</div>
+        <div class="sl2">CGPA — University Gold Medalist, First Class with Distinction</div>
+      </div>
+      <div class="sc">
+        <div class="sn">8 wks</div>
+        <div class="sl2">To ship a 0-to-1 Identity Provider for a 15,000-device enterprise</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="rv">
+    <p class="sl">What I Do</p>
+    <h2 class="st">Four ways I can help.</h2>
+    <p class="sd">Web design, automation, product strategy, or career advisory — I bring enterprise-grade thinking to every engagement.</p>
+  </div>
+  <div class="svc-grid rv">
+    <div class="svc-card">
+      <div class="svc-ico ico-p"><i class="fa-solid fa-code"></i></div>
+      <h3>Web Design</h3>
+      <p>Fast, conversion-focused websites for restaurants, clinics, salons, Islamic businesses, and local SMBs. Custom HTML/CSS — no templates — mobile-first, built to convert.</p>
+      <div class="tags"><span class="tag tp">HTML / CSS</span><span class="tag tp">Landing Pages</span><span class="tag tp">Mobile-First</span><span class="tag tp">Figma</span><span class="tag tp">CRO</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico ico-c"><i class="fa-solid fa-robot"></i></div>
+      <h3>AI Automation</h3>
+      <p>Eliminate repetitive work with intelligent pipelines. Lead capture, CRM sync, AI agent workflows, notification systems — built with n8n, Claude, Make, and Zapier.</p>
+      <div class="tags"><span class="tag tc">n8n</span><span class="tag tc">Claude AI</span><span class="tag tc">Zapier</span><span class="tag tc">Make</span><span class="tag tc">AI Agents</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico ico-a"><i class="fa-solid fa-chart-line"></i></div>
+      <h3>PM Consulting</h3>
+      <p>Strategic product support for B2B SaaS founders — roadmap clarity, PRD writing, GTM strategy, competitive analysis. Built on 3 years of real enterprise delivery at scale.</p>
+      <div class="tags"><span class="tag ta">Product Roadmap</span><span class="tag ta">PRDs</span><span class="tag ta">GTM Strategy</span><span class="tag ta">Market Research</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico ico-g"><i class="fa-solid fa-user-tie"></i></div>
+      <h3>Career &amp; Profile Advisory</h3>
+      <p>For early-career PMs and freelancers — Upwork profile optimisation, portfolio strategy, LinkedIn positioning, and interview prep grounded in real hiring experience.</p>
+      <div class="tags"><span class="tag tg">Upwork Profile</span><span class="tag tg">LinkedIn</span><span class="tag tg">Portfolio</span><span class="tag tg">PM Interview Prep</span></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ WORK (CASE STUDIES) ══ -->
+<section id="work">
+  <div class="rv">
+    <p class="sl">Featured Work</p>
+    <h2 class="st">Selected Projects</h2>
+    <p class="sd">Product Manager · Hexnode (Mitsogo) — B2B SaaS Enterprise Security &amp; UEM Platform · Aug 2023 – Sep 2026. Click any card to read the full case study.</p>
+  </div>
+  <div class="filter-row rv" id="filterRow">
+    <button class="fb active" data-filter="all">All</button>
+    <button class="fb" data-filter="identity">Identity &amp; Access</button>
+    <button class="fb" data-filter="integration">Integrations</button>
+    <button class="fb" data-filter="compliance">Compliance</button>
+    <button class="fb" data-filter="analytics">Analytics</button>
+    <button class="fb" data-filter="rollout">Rollout</button>
+  </div>
+  <div class="work-grid rv" id="workGrid">
+
+    <!-- ★ FEATURED: Identity Provider — 0-to-1 build -->
+    <div class="wc wc-wide wc-featured" data-cat="identity" data-project="identity">
+      <div class="wtile wt1">
+        <div class="wc-feat-badge">0 → 1 Build</div>
+        <svg viewBox="0 0 24 24" width="44" style="position:relative;z-index:2"><path d="M12 2l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7l8-4z" stroke="#fff" fill="rgba(168,85,247,.3)" stroke-width="1.4"/></svg>
+        <div style="font-size:.65rem;color:rgba(255,255,255,.55);text-align:center;line-height:1.5;padding:0 .75rem">Secured a 15,000-device enterprise in 8 weeks</div>
+      </div>
+      <div class="wb">
+        <span class="wtag">Identity &amp; Access Management · Flagship Product</span>
+        <div class="wstat">15K+</div>
+        <h3>Hexnode Identity Provider (IdP) — Built from Scratch</h3>
+        <p>Led the entire 0-to-1 build of an enterprise-grade Identity Provider — from product scoping and PRD to launch — in 8 weeks. Zero Trust access built on real-time device trust, unifying user identity and device compliance before every login decision.</p>
+        <div class="feat-grid">
+          <div class="feat-item"><i class="fa-solid fa-shield-halved"></i>Conditional Access</div>
+          <div class="feat-item"><i class="fa-solid fa-users-gear"></i>RBAC</div>
+          <div class="feat-item"><i class="fa-solid fa-mobile-screen-button"></i>MFA / Step-up Auth</div>
+          <div class="feat-item"><i class="fa-solid fa-clock-rotate-left"></i>Session Management</div>
+          <div class="feat-item"><i class="fa-solid fa-grid-2"></i>Application Access</div>
+          <div class="feat-item"><i class="fa-solid fa-chart-bar"></i>Activity Reports</div>
+          <div class="feat-item"><i class="fa-solid fa-arrows-rotate"></i>SCIM Lifecycle</div>
+          <div class="feat-item"><i class="fa-brands fa-microsoft"></i>Entra ID / Google</div>
+          <div class="feat-item"><i class="fa-solid fa-location-crosshairs"></i>Geo Restriction</div>
+        </div>
+        <div class="view-cs">View full case study <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke-width="2" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+
+    <div class="wc" data-cat="integration" data-project="integration">
+      <div class="wtile wt2"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div>
+      <div class="wb">
+        <span class="wtag">Integrations</span>
+        <div class="wstat">60%</div>
+        <h3>Industry-First Bidirectional Integration</h3>
+        <p>Architected the industry's first bidirectional ITSM–UEM integration (ServiceNow), cutting manual asset reconciliation by 60%.</p>
+        <ul class="wbullets">
+          <li>Admins act on incidents tied to any device directly from the console — no tool-switching</li>
+          <li>Actions in either system reflect back in real time, closing the UEM–ITSM loop</li>
+        </ul>
+        <div class="view-cs">View case study <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke-width="2" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+
+    <div class="wc" data-cat="compliance" data-project="compliance">
+      <div class="wtile wt4"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+      <div class="wb">
+        <span class="wtag">Compliance</span>
+        <div class="wstat">100+</div>
+        <h3>Enterprise Compliance at Scale</h3>
+        <p>Shipped 100+ CIS Compliance rules with risk-scoring in under 2 weeks for a Fortune 500 deployment of 30,000+ devices.</p>
+        <ul class="wbullets">
+          <li>Pre-configured CIS Level 1 template — deploy a vetted baseline in minutes, not weeks</li>
+          <li>Risk-scoring flags non-compliant devices automatically instead of periodic manual audits</li>
+        </ul>
+        <div class="view-cs">View case study <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke-width="2" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+
+    <div class="wc" data-cat="analytics" data-project="analytics">
+      <div class="wtile wt3"><svg viewBox="0 0 24 24"><path d="M4 19V11M11 19V5M18 19v-7"/></svg></div>
+      <div class="wb">
+        <span class="wtag">Analytics</span>
+        <div class="wstat">30+</div>
+        <h3>Premium Analytics Suite</h3>
+        <p>Designed 30+ Device Health Reports and 70+ Audit Reports for the Ultra Plan, directly increasing trial-to-paid enterprise conversion.</p>
+        <ul class="wbullets">
+          <li>Fleet-wide visibility without a separate BI tool bolted on</li>
+          <li>Tied product usage data directly to revenue strategy for the premium tier</li>
+        </ul>
+        <div class="view-cs">View case study <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke-width="2" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+
+    <div class="wc wc-wide" data-cat="rollout" data-project="rollout">
+      <div class="wtile wt5" style="height:90px">
+        <svg viewBox="0 0 80 40" width="60"><circle cx="40" cy="20" r="17" fill="none" stroke="#fff" stroke-width="1.2" opacity=".5"/><circle cx="40" cy="20" r="11" fill="none" stroke="#fff" stroke-width="1.2" opacity=".7"/><circle cx="40" cy="20" r="5" fill="#fff"/></svg>
+      </div>
+      <div class="wb">
+        <span class="wtag">Rollout &amp; Device Actions</span>
+        <div class="wstat">4+ Rings</div>
+        <h3>Deployment Rings &amp; Waves for Safe Fleet Rollouts</h3>
+        <p>Built a staged rollout framework — Canary → Early Adopters → Broad Devices → All Devices — with Pause, Resume, Halt, and Start Next Ring controls. Applied to every remote action, policy, and profile, not just patch management. AI-based analysis flags risky endpoints mid-rollout and triggers remediation automatically.</p>
+        <ul class="wbullets">
+          <li>Sharply reduces blast radius — issues surface on a small device subset before reaching the full fleet</li>
+          <li>One consistent framework for every remote action, policy, and profile rollout</li>
+          <li>AI-driven analysis flags and remediates at-risk endpoints automatically during a wave</li>
+        </ul>
+        <div class="view-cs">View case study <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke-width="2" stroke-linecap="round"/></svg></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlights-box rv">
+    <h4>Additional Highlights</h4>
+    <ul>
+      <li>Executed a CEO-mandated Incident Management module and advanced Alerting system, creating a new competitive edge in the UEM market</li>
+      <li>Spearheaded visionOS Day-0 enrollment and management — first UEM platform with Apple spatial computing support</li>
+      <li>Launched Hexnode Gateway for frictionless large-scale device migrations from legacy MDM platforms</li>
+      <li>Led technical architecture presentations for third-party partners and product roadmap reviews with C-suite executives</li>
+      <li>Diagnosed and resolved checkout/cart friction points, driving measurable increase in sales conversions</li>
+    </ul>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="rv">
+    <p class="sl">Skills</p>
+    <h2 class="st">What I work with.</h2>
+  </div>
+  <div class="sk-grid">
+    <div class="rv">
+      <h3 style="font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--a);margin-bottom:.8rem">Web &amp; Design</h3>
+      <div class="sk-tags">
+        <span class="sk">HTML</span><span class="sk">CSS</span><span class="sk">Responsive Design</span>
+        <span class="sk">Figma</span><span class="sk">Landing Pages</span><span class="sk">CRO</span>
+        <span class="sk">UI/UX Wireframing</span><span class="sk">Tailwind CSS</span>
+      </div>
+    </div>
+    <div class="rv">
+      <h3 style="font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--a);margin-bottom:.8rem">AI &amp; Automation</h3>
+      <div class="sk-tags">
+        <span class="sk">n8n</span><span class="sk">Claude AI</span><span class="sk">Zapier</span>
+        <span class="sk">Make (Integromat)</span><span class="sk">AI Agent Dev</span>
+        <span class="sk">Go High Level</span><span class="sk">Gemini Canvas</span>
+      </div>
+    </div>
+    <div class="rv">
+      <h3 style="font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--a);margin-bottom:.8rem">Product Management</h3>
+      <div class="sk-tags">
+        <span class="sk">Product Strategy</span><span class="sk">PRD Writing</span>
+        <span class="sk">GTM Strategy</span><span class="sk">Roadmap Execution</span>
+        <span class="sk">User Stories</span><span class="sk">Competitive Analysis</span>
+        <span class="sk">Market Research</span><span class="sk">Stakeholder Mgmt</span>
+      </div>
+    </div>
+    <div class="rv">
+      <h3 style="font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--a);margin-bottom:.8rem">Security &amp; Technical</h3>
+      <div class="sk-tags">
+        <span class="sk">IAM / Zero Trust</span><span class="sk">MFA</span>
+        <span class="sk">UEM / MDM</span><span class="sk">CIS Benchmarks</span>
+        <span class="sk">SAML 2.0 / OIDC</span><span class="sk">REST API</span>
+        <span class="sk">Git / GitHub</span><span class="sk">Jira / ClickUp</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ RECOGNITION ══ -->
+<section id="recognition">
+  <div class="rv">
+    <p class="sl">Recognition</p>
+    <h2 class="st">Milestones.</h2>
+  </div>
+  <div class="rec-grid rv">
+    <div class="rec-card">
+      <div class="rec-ico"><i class="fa-solid fa-medal" style="color:var(--a)"></i></div>
+      <h4>University Gold Medalist</h4>
+      <p>Jerusalem College of Engineering (Anna University) — CGPA 9.58/10, First Class with Distinction</p>
+    </div>
+    <div class="rec-card">
+      <div class="rec-ico"><i class="fa-solid fa-link" style="color:var(--c)"></i></div>
+      <h4>Industry-First Integration</h4>
+      <p>Architected the first-ever bidirectional ITSM–UEM integration — reduced manual work by 60%</p>
+    </div>
+    <div class="rec-card">
+      <div class="rec-ico"><i class="fa-solid fa-certificate" style="color:#34d399"></i></div>
+      <h4>Product Analytics &amp; AI</h4>
+      <p>Micro-Certification — Product School · AI Agents for Product Leaders — LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <div class="spot-label rv"><i class="fa-solid fa-star" style="color:var(--a)"></i>Hexnode (Mitsogo) · Spot Recognition Awards</div>
+  <div class="spot-grid rv">
+    <div class="spot-card">
+      <p class="spot-q">Great work — your execution on the recent product delivery was outstanding. Keep pushing.</p>
+      <div class="spot-badge"><i class="fa-solid fa-star"></i>Spot Recognition Award #1 · Hexnode</div>
+    </div>
+    <div class="spot-card">
+      <p class="spot-q">Just wanted to recognize your work on a new product — you are moving so fast we are starting to wonder if you are actually a robot. Thanks for the hustle.</p>
+      <div class="spot-badge"><i class="fa-solid fa-star"></i>Spot Recognition Award #2 · Hexnode</div>
+    </div>
+    <div class="spot-card">
+      <p class="spot-q">You are doing important work and it does not go unnoticed. Keep pushing forward — you are making a difference.</p>
+      <div class="spot-badge"><i class="fa-solid fa-star"></i>Spot Recognition Award #3 · Hexnode</div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ EDUCATION ══ -->
+<section id="education">
+  <div class="rv">
+    <p class="sl">Education &amp; Certifications</p>
+    <h2 class="st">Credentials.</h2>
+  </div>
+  <div class="edu-grid rv">
+    <div class="edu-card">
+      <div class="eco">B.E. Degree</div>
+      <h4>Biomedical Engineering</h4>
+      <p>Jerusalem College of Engineering (Anna University), Chennai</p>
+      <div class="emeta">2019 – 2023 · CGPA 9.58 · Gold Medalist</div>
+    </div>
+    <div class="edu-card">
+      <div class="eco">Certification</div>
+      <h4>Product Analytics &amp; AI (AIC)</h4>
+      <p>Micro-Certification — Product School</p>
+    </div>
+    <div class="edu-card">
+      <div class="eco">LinkedIn Learning</div>
+      <h4>Technical Product Management</h4>
+      <p>Professional Scrum Product Ownership · AI Agents for Product Leaders</p>
+    </div>
+    <div class="edu-card">
+      <div class="eco">Certification</div>
+      <h4>Digital Skills: User Experience</h4>
+      <p>Accenture · Problem Solving (Basics) — HackerRank</p>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="rv">
+    <p class="sl">Get in Touch</p>
+    <h2 class="st">Let's build something.</h2>
+    <p class="sd">Available for web design, automation, consulting, and advisory projects — globally. Based in Chennai, India.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="rv">
+      <p>Whether it's a website, an automation workflow, product strategy, or a career conversation — I'd love to hear from you. I work across time zones.</p>
+      <div class="c-links">
+        <a href="mailto:apsaraapss@gmail.com" class="c-link"><i class="fa-regular fa-envelope"></i>apsaraapss@gmail.com</a>
+        <a href="https://linkedin.com/in/thameem-apsara-banu-b26b14213" class="c-link" target="_blank"><i class="fa-brands fa-linkedin"></i>linkedin.com/in/thameem-apsara-banu</a>
+        <a href="https://github.com/thameemapsarabanu" class="c-link" target="_blank"><i class="fa-brands fa-github"></i>github.com/thameemapsarabanu</a>
+        <a href="tel:+917550117248" class="c-link"><i class="fa-solid fa-phone"></i>+91 75501 17248</a>
+      </div>
+    </div>
+    <div class="rv">
+      <form class="c-form" onsubmit="handleForm(event)">
+        <div class="fg"><label>Name</label><input type="text" placeholder="Your name" required></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com" required></div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell me about your project..." required></textarea></div>
+        <button type="submit" class="btn-p" style="align-self:flex-start;border:none"><i class="fa-solid fa-paper-plane"></i>Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Thameem Apsara Banu</div>
+  <div class="f-copy">© 2026 · For Your Spark · Chennai, India</div>
+  <div class="f-soc">
+    <a href="https://linkedin.com/in/thameem-apsara-banu-b26b14213" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://github.com/thameemapsarabanu" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="mailto:apsaraapss@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+  </div>
+</footer>
+
+<!-- ══ MODAL ══ -->
+<div class="mo" id="mo">
+  <div class="mp" id="mp" role="dialog" aria-modal="true">
+    <div class="mc" id="mc"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke-width="2" stroke-linecap="round"/></svg></div>
+    <div id="mc-content"></div>
+  </div>
+</div>
+
+<!-- CASE STUDY TEMPLATES -->
+<template id="d-identity">
+  <div class="m-eyebrow">Identity &amp; Access Management · Flagship 0-to-1 Build</div>
+  <div class="m-stat">15,000+</div>
+  <h2>Hexnode Identity Provider (IdP)</h2>
+  <div class="m-meta">Product Manager · Hexnode (Mitsogo) · Aug 2023 – Sep 2026 · Built from scratch in 8 weeks</div>
+
+  <div class="msec"><h4>The Challenge</h4><p>A 15,000-device enterprise account was at risk of stalling — their security requirements demanded access decisions that went beyond a password check. They needed proof that every login came from the right user on a trustworthy, compliant device. No such product existed inside our platform. We had to build it from zero.</p></div>
+  <div class="msec"><h4>My Approach</h4><p>Rather than trying to ship a full IAM suite on day one, I scoped the first version tightly around the four signals enterprise buyers actually asked about: user identity, device compliance, location, and risk. Partnered with engineering and security to keep every decision inside an 8-week window — no scope creep, no missed signals.</p></div>
+  <div class="msec"><h4>The Solution</h4><p>Led 0-to-1 development of an enterprise Identity Provider — Zero Trust access built on real-time device trust, unifying user identity and device posture before every login decision.</p></div>
+
+  <div class="msec">
+    <h4>Feature Breakdown</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:.5rem">
+      <div style="background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.18);border-radius:10px;padding:.8rem .9rem">
+        <div style="font-size:.7rem;font-weight:800;color:var(--pl);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem"><i class="fa-solid fa-shield-halved"></i>Conditional Access</div>
+        <p style="font-size:.8rem;color:var(--tm);line-height:1.6">Enforces rules based on user identity, device compliance, location, and security context. Blocks or allows access in real time — not just at login. A valid credential from a non-compliant device still gets denied.</p>
+      </div>
+      <div style="background:rgba(6,182,212,.05);border:1px solid rgba(6,182,212,.18);border-radius:10px;padding:.8rem .9rem">
+        <div style="font-size:.7rem;font-weight:800;color:var(--c);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem"><i class="fa-solid fa-users-gear"></i>Role-Based Access Control</div>
+        <p style="font-size:.8rem;color:var(--tm);line-height:1.6">Assigns permissions based on a user's role and function. Shipped granular admin roles — Super Admin, Security Admin — with scoped access so teams could delegate without over-permissioning.</p>
+      </div>
+      <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.18);border-radius:10px;padding:.8rem .9rem">
+        <div style="font-size:.7rem;font-weight:800;color:var(--a);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem"><i class="fa-solid fa-mobile-screen-button"></i>MFA &amp; Contextual Authentication</div>
+        <p style="font-size:.8rem;color:var(--tm);line-height:1.6">Step-up MFA triggers automatically for high-risk actions — not at every login. Context-aware: low-risk users on compliant devices aren't friction-taxed; anomalous sessions get challenged.</p>
+      </div>
+      <div style="background:rgba(52,211,153,.05);border:1px solid rgba(52,211,153,.18);border-radius:10px;padding:.8rem .9rem">
+        <div style="font-size:.7rem;font-weight:800;color:#34d399;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem"><i class="fa-solid fa-clock-rotate-left"></i>Session Management</div>
+        <p style="font-size:.8rem;color:var(--tm);line-height:1.6">Inactivity-based session policies limit exposure from unattended sessions. Admins set timeout windows per app, role, or risk level — reducing the blast radius of a stolen or idle session.</p>
+      </div>
+      <div style="background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.18);border-radius:10px;padding:.8rem .9rem">
+        <div style="font-size:.7rem;font-weight:800;color:var(--pl);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem"><i class="fa-solid fa-grid-2"></i>Application Access</div>
+        <p style="font-size:.8rem;color:var(--tm);line-height:1.6">Policy-controlled access to web, mobile, and SaaS applications. Access is gated per app — users see only what their compliance state and role allows, not a flat list of everything.</p>
+      </div>
+      <div style="background:rgba(6,182,212,.05);border:1px solid rgba(6,182,212,.18);border-radius:10px;padding:.8rem .9rem">
+        <div style="font-size:.7rem;font-weight:800;color:var(--c);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem"><i class="fa-solid fa-chart-bar"></i>Activity &amp; Audit Reports</div>
+        <p style="font-size:.8rem;color:var(--tm);line-height:1.6">Centralizes sign-in history, provisioning events, and authentication activity across all users and apps. Audit-ready out of the box — compliance teams get the logs they need without building a separate pipeline.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="msec">
+    <h4>Access Signals Evaluated</h4>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem">
+      <span style="display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .8rem;border-radius:8px"><i class="fa-solid fa-user" style="color:var(--pl);font-size:.68rem"></i>User Identity</span>
+      <span style="display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .8rem;border-radius:8px"><i class="fa-solid fa-laptop-code" style="color:var(--pl);font-size:.68rem"></i>Device Trust &amp; Compliance</span>
+      <span style="display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .8rem;border-radius:8px"><i class="fa-solid fa-location-crosshairs" style="color:var(--pl);font-size:.68rem"></i>Geo Restriction</span>
+      <span style="display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .8rem;border-radius:8px"><i class="fa-solid fa-network-wired" style="color:var(--pl);font-size:.68rem"></i>Network Context</span>
+      <span style="display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .8rem;border-radius:8px"><i class="fa-solid fa-gauge-high" style="color:var(--pl);font-size:.68rem"></i>Risk Score</span>
+    </div>
+  </div>
+
+  <div class="msec">
+    <h4>Federated Identity &amp; Lifecycle</h4>
+    <p style="margin-bottom:.6rem">Integrated with external identity providers so enterprises don't have to rebuild their directory from scratch.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+      <span style="display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .85rem;border-radius:8px"><i class="fa-brands fa-microsoft" style="color:var(--pl)"></i>Microsoft Entra ID</span>
+      <span style="display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .85rem;border-radius:8px"><i class="fa-brands fa-google" style="color:var(--c)"></i>Google Workspace</span>
+      <span style="display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .85rem;border-radius:8px"><i class="fa-solid fa-arrows-rotate" style="color:#34d399"></i>SCIM Lifecycle Automation</span>
+      <span style="display:flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--t);background:rgba(255,255,255,.04);border:1px solid var(--gb);padding:.35rem .85rem;border-radius:8px"><i class="fa-solid fa-key" style="color:var(--a)"></i>SAML 2.0 / OIDC</span>
+    </div>
+  </div>
+
+  <div class="msec"><h4>Impact</h4><ul><li>Directly secured and closed a 15,000-device enterprise account that was blocked on security requirements</li><li>Built a full IdP in 8 weeks — from zero PRD to production — without compromising any signal or feature</li><li>Binds every login decision to real-time device posture via native Hexnode UEM integration — no gaps</li><li>Step-up MFA reduces friction for low-risk users while catching anomalous sessions automatically</li><li>Compliance teams get audit-ready logs without building a separate reporting pipeline</li></ul></div>
+  <div class="msec"><h4>Skills Applied</h4><div class="m-tags"><span>Zero Trust</span><span>Conditional Access</span><span>MFA</span><span>RBAC</span><span>SCIM</span><span>SAML 2.0 / OIDC</span><span>0-to-1 Build</span><span>Federated Identity</span><span>Stakeholder Management</span><span>PRD</span><span>Security Product Strategy</span></div></div>
+</template>
+
+<template id="d-integration">
+  <div class="m-eyebrow">Integrations</div>
+  <div class="m-stat">60%</div>
+  <h2>Industry-First Bidirectional ITSM–UEM Integration</h2>
+  <div class="m-meta">Hexnode (Mitsogo) · Product Manager · Aug 2023 – Sep 2026</div>
+  <div class="msec"><h4>The Challenge</h4><p>Customers running both an ITSM tool and the UEM platform had to manually cross-reference incidents between two separate consoles just to act on a single device issue — slow, error-prone, and a constant source of admin friction.</p></div>
+  <div class="msec"><h4>My Approach</h4><p>The first version simply pulled incidents into the UEM console for visibility, matching what competitors offered. Customer feedback made it clear that visibility alone wasn't enough — they wanted to act without switching tools, which completely reframed the project scope.</p></div>
+  <div class="msec"><h4>The Solution</h4><p>Architected the industry's first bidirectional integration: admins can now view and act on incidents tied to a specific user or device directly from the UEM console, with actions in either system reflected back in real time.</p></div>
+  <div class="msec"><h4>Impact</h4><ul><li>Reduced manual asset reconciliation by 60%</li><li>Eliminated duplicate ticket lookups and cross-referencing between two consoles</li><li>Became a packaged, ready-to-deploy integration — cutting setup time for teams running both platforms</li></ul></div>
+  <div class="msec"><h4>Skills Applied</h4><div class="m-tags"><span>API Integrations</span><span>Customer-Driven Roadmapping</span><span>ITSM</span><span>Cross-functional Delivery</span><span>ServiceNow</span></div></div>
+</template>
+
+<template id="d-compliance">
+  <div class="m-eyebrow">Compliance</div>
+  <div class="m-stat">100+</div>
+  <h2>Enterprise Compliance at Scale</h2>
+  <div class="m-meta">Hexnode (Mitsogo) · Product Manager · Aug 2023 – Sep 2026</div>
+  <div class="msec"><h4>The Challenge</h4><p>A Global Fortune 500 deployment of 30,000+ devices needed alignment with CIS Benchmark standards to move forward — on a timeline that didn't leave room for building a compliance ruleset from scratch.</p></div>
+  <div class="msec"><h4>My Approach</h4><p>Prioritized CIS Benchmark Level 1 first — essential hardening with minimal risk of service disruption — rather than the more disruptive Level 2 settings, and packaged the result as a reusable template instead of a one-off ruleset.</p></div>
+  <div class="msec"><h4>The Solution</h4><p>Shipped 100+ CIS Compliance rules with automated risk-scoring tracking in under 2 weeks, giving the customer a vetted, pre-configured baseline rather than a manual configuration exercise.</p></div>
+  <div class="msec"><h4>Impact</h4><ul><li>Enabled a 30,000+ device Fortune 500 deployment on a tight deadline</li><li>Risk-scoring flags non-compliant devices automatically instead of periodic manual audits</li><li>Removed the need for future customers to build compliance rules from scratch — reusable template</li></ul></div>
+  <div class="msec"><h4>Skills Applied</h4><div class="m-tags"><span>CIS Benchmarks</span><span>Policy Templates</span><span>Risk Scoring</span><span>Enterprise Delivery</span><span>Compliance</span></div></div>
+</template>
+
+<template id="d-analytics">
+  <div class="m-eyebrow">Analytics</div>
+  <div class="m-stat">30+</div>
+  <h2>Premium Analytics Suite</h2>
+  <div class="m-meta">Hexnode (Mitsogo) · Product Manager · Aug 2023 – Sep 2026</div>
+  <div class="msec"><h4>The Challenge</h4><p>Enterprise prospects evaluating the premium tier needed concrete proof of ongoing value — visibility into fleet health and audit history — not just a sales pitch, to justify the upgrade decision.</p></div>
+  <div class="msec"><h4>My Approach</h4><p>Worked backward from the questions admins actually ask during a renewal or upgrade conversation, rather than starting from "what data do we already have," to decide which reports would actually move the trial-to-paid decision.</p></div>
+  <div class="msec"><h4>The Solution</h4><p>Designed 30+ Device Health Reports and 70+ Audit Reports built specifically for the premium tier, giving admins fleet-wide visibility without bolting on a separate BI tool.</p></div>
+  <div class="msec"><h4>Impact</h4><ul><li>Directly increased trial-to-paid conversion for enterprise prospects</li><li>Cut time spent manually compiling evidence for audit and compliance reviews</li><li>Tied product usage data directly to revenue strategy for the Ultra Plan</li></ul></div>
+  <div class="msec"><h4>Skills Applied</h4><div class="m-tags"><span>Product Analytics</span><span>Reporting</span><span>Revenue Strategy</span><span>Mixpanel</span><span>Data-Driven PM</span></div></div>
+</template>
+
+<template id="d-rollout">
+  <div class="m-eyebrow">Rollout &amp; Device Actions</div>
+  <div class="m-stat">4+ Rings</div>
+  <h2>Deployment Rings &amp; Waves for Safe Fleet Rollouts</h2>
+  <div class="m-meta">Hexnode (Mitsogo) · Product Manager · Aug 2023 – Sep 2026</div>
+  <div class="msec"><h4>The Challenge</h4><p>Pushing any remote action, policy, or profile to an entire device fleet at once meant an all-or-nothing gamble — if something went wrong, there was no way to course-correct mid-rollout, only after the fact.</p></div>
+  <div class="msec"><h4>My Approach</h4><p>Designed the framework to generalize across every remote action, policy, and profile type from the start — not a one-off for patch management — with live admin controls so no rollout is ever locked in once started.</p></div>
+  <div class="msec"><h4>The Solution</h4><p>Built a staged rollout framework — Canary, Early Adopters, Broad Devices, All Devices — with support for custom rings beyond the defaults. Live controls: Pause, Resume, Halt, Start Next Ring. AI-based analysis layered on top flags risky endpoints mid-rollout and triggers remediation automatically.</p></div>
+  <div class="msec"><h4>Impact</h4><ul><li>Sharply reduces blast radius — issues surface on a small subset before reaching the full fleet</li><li>One consistent framework for every remote action, policy, and profile rollout — not a one-off</li><li>AI analysis flags and remediates at-risk endpoints automatically, reducing manual triage during a wave</li><li>Not capped at 4 rings — custom rings support any rollout cadence the team needs</li></ul></div>
+  <div class="msec"><h4>Skills Applied</h4><div class="m-tags"><span>Rollout Strategy</span><span>Automation</span><span>AI-Assisted Remediation</span><span>Risk Management</span><span>Platform Design</span></div></div>
+</template>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script>
+/* ══ THREE.JS HERO SCENE ══ */
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  if(!canvas) return;
+  const wrap = canvas.parentElement;
+  const W = () => wrap.clientWidth, H = () => wrap.clientHeight;
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(50, W()/H(), 0.1, 100);
+  cam.position.z = 6;
+  const ren = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  ren.setSize(W(), H());
+  ren.setPixelRatio(Math.min(devicePixelRatio, 2));
+
+  // Core sphere
+  const sg = new THREE.SphereGeometry(1.5, 48, 48);
+  const sm = new THREE.MeshStandardMaterial({color:0x1a0050, metalness:.95, roughness:.05, emissive:0x0d0030, emissiveIntensity:.6});
+  const sphere = new THREE.Mesh(sg, sm);
+  scene.add(sphere);
+
+  // Wireframe
+  const wf = new THREE.Mesh(new THREE.SphereGeometry(1.51,20,20), new THREE.MeshBasicMaterial({color:0x7c3aed, wireframe:true, opacity:.12, transparent:true}));
+  scene.add(wf);
+
+  // Outer glow shell
+  const glow = new THREE.Mesh(new THREE.SphereGeometry(1.85,16,16), new THREE.MeshBasicMaterial({color:0x6020c0, opacity:.06, transparent:true, side:THREE.BackSide}));
+  scene.add(glow);
+
+  // Ring 1 (purple)
+  const r1 = new THREE.Mesh(new THREE.TorusGeometry(2.3,.016,8,140), new THREE.MeshBasicMaterial({color:0xa855f7, opacity:.55, transparent:true}));
+  r1.rotation.x = Math.PI/3;
+  scene.add(r1);
+
+  // Ring 2 (cyan)
+  const r2 = new THREE.Mesh(new THREE.TorusGeometry(2.9,.01,8,120), new THREE.MeshBasicMaterial({color:0x06b6d4, opacity:.3, transparent:true}));
+  r2.rotation.x = -Math.PI/5; r2.rotation.z = Math.PI/4;
+  scene.add(r2);
+
+  // Orbiting dots
+  const mkDot = (c,s) => { const d = new THREE.Mesh(new THREE.SphereGeometry(s,8,8), new THREE.MeshBasicMaterial({color:c})); scene.add(d); return d; };
+  const d1 = mkDot(0xa855f7, .065);
+  const d2 = mkDot(0x22d3ee, .05);
+  const d3 = mkDot(0xf59e0b, .04);
+
+  // Particles
+  const pPos = new Float32Array(240*3);
+  for(let i=0;i<240*3;i++) pPos[i]=(Math.random()-.5)*14;
+  const pG = new THREE.BufferGeometry();
+  pG.setAttribute('position', new THREE.BufferAttribute(pPos,3));
+  const pts = new THREE.Points(pG, new THREE.PointsMaterial({color:0x7c3aed,size:.028,transparent:true,opacity:.5}));
+  scene.add(pts);
+
+  // Lights
+  scene.add(new THREE.AmbientLight(0x080020, 3));
+  const pl1 = new THREE.PointLight(0x7c3aed, 6, 14);
+  const pl2 = new THREE.PointLight(0x06b6d4, 5, 12);
+  const pl3 = new THREE.PointLight(0xf59e0b, 1.5, 8);
+  pl3.position.set(0,-4,-2);
+  scene.add(pl1, pl2, pl3);
+
+  let mx=0, my=0;
+  document.addEventListener('mousemove', e=>{ mx=(e.clientX/innerWidth-.5)*2; my=(e.clientY/innerHeight-.5)*2; });
+
+  let t=0;
+  function tick(){
+    requestAnimationFrame(tick);
+    t+=.006;
+    sphere.rotation.y+=.003; wf.rotation.y+=.003;
+    r1.rotation.z+=.005; r2.rotation.z-=.003;
+    d1.position.set(Math.cos(t*1.4)*2.3*Math.cos(r1.rotation.x), Math.sin(t*1.4)*2.3, Math.cos(t*1.4)*2.3*Math.sin(r1.rotation.x));
+    d2.position.set(Math.cos(t*.85+1)*2.9*Math.cos(r2.rotation.x), Math.sin(t*.85+1)*2.9*Math.cos(r2.rotation.z), Math.sin(t*.85+1)*2.9);
+    d3.position.set(Math.cos(t*1.1+2)*2.6*Math.cos(r1.rotation.x+.5), Math.sin(t*1.1+2)*2.6, Math.sin(t*1.1+2)*2.6*.7);
+    pl1.position.set(Math.sin(t*.7)*4.5, Math.cos(t*.4)*2, Math.cos(t*.7)*4.5);
+    pl2.position.set(Math.sin(t*.5+Math.PI)*3.5, Math.sin(t*.3)*2, Math.cos(t*.5+Math.PI)*3.5);
+    pts.rotation.y+=.0006;
+    cam.position.x+=(mx*.7-cam.position.x)*.04;
+    cam.position.y+=(-my*.45-cam.position.y)*.04;
+    cam.lookAt(0,0,0);
+    ren.render(scene,cam);
+  }
+  tick();
+  window.addEventListener('resize',()=>{ cam.aspect=W()/H(); cam.updateProjectionMatrix(); ren.setSize(W(),H()); });
+})();
+
+/* ══ TYPING ANIMATION ══ */
+(function(){
+  const words=['Web Designer','AI Automation Expert','Product Manager','Founder'];
+  const el=document.getElementById('tw');
+  let wi=0,ci=0,del=false;
+  function type(){
+    const w=words[wi];
+    if(!del){el.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1900);return;}}
+    else{el.textContent=w.slice(0,--ci);if(ci===0){del=false;wi=(wi+1)%words.length;setTimeout(type,300);return;}}
+    setTimeout(type,del?55:85);
+  }
+  type();
+})();
+
+/* ══ SCROLL REVEAL ══ */
+(function(){
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.08});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+})();
+
+/* ══ CUSTOM CURSOR ══ */
+(function(){
+  const cd=document.getElementById('cd'), cr=document.getElementById('cr');
+  if(!cd||!cr) return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cd.style.left=mx+'px'; cd.style.top=my+'px'; });
+  document.addEventListener('mousedown',()=>cd.classList.add('click'));
+  document.addEventListener('mouseup',()=>cd.classList.remove('click'));
+  (function loop(){ rx+=(mx-rx)*.1; ry+=(my-ry)*.1; cr.style.left=rx+'px'; cr.style.top=ry+'px'; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button,.wc,.svc-card,.rec-card,.edu-card,.spot-card,.fcard,.sc').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ cd.classList.add('hover'); cr.classList.add('hover'); });
+    el.addEventListener('mouseleave',()=>{ cd.classList.remove('hover'); cr.classList.remove('hover'); });
+  });
+})();
+
+/* ══ MAGNETIC BUTTONS ══ */
+document.querySelectorAll('.btn-p,.btn-o').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    const x=(e.clientX-r.left-r.width/2)*.4;
+    const y=(e.clientY-r.top-r.height/2)*.4;
+    btn.style.transform=`translate(${x}px,${y}px)`;
+  });
+  btn.addEventListener('mouseleave',()=>{ btn.style.transform=''; });
+});
+
+/* ══ 3D CARD TILT ══ */
+document.querySelectorAll('.wc:not(.wc-featured),.svc-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(900px) rotateX(${-y*9}deg) rotateY(${x*9}deg) translateY(-5px) scale(1.01)`;
+    card.style.boxShadow=`${-x*18}px ${-y*12}px 40px rgba(124,58,237,.18)`;
+  });
+  card.addEventListener('mouseleave',()=>{ card.style.transform=''; card.style.boxShadow=''; });
+});
+
+/* ══ WORK FILTERS ══ */
+document.querySelectorAll('.fb').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.wc').forEach(c=>{
+      c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';
+    });
+  });
+});
+
+/* ══ MODAL ══ */
+const mo=document.getElementById('mo');
+const mcontent=document.getElementById('mc-content');
+let lastFocus=null;
+
+function openModal(key){
+  const tpl=document.getElementById('d-'+key);
+  if(!tpl)return;
+  mcontent.innerHTML='';
+  mcontent.appendChild(tpl.content.cloneNode(true));
+  mo.classList.add('open');
+  document.body.style.overflow='hidden';
+  lastFocus=document.activeElement;
+  document.getElementById('mc').focus();
+}
+function closeModal(){
+  mo.classList.remove('open');
+  document.body.style.overflow='';
+  if(lastFocus)lastFocus.focus();
+}
+document.querySelectorAll('.wc').forEach(c=>{
+  c.setAttribute('tabindex','0');
+  c.setAttribute('role','button');
+  c.addEventListener('click',()=>openModal(c.dataset.project));
+  c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(c.dataset.project);}});
+});
+document.getElementById('mc').addEventListener('click',closeModal);
+mo.addEventListener('click',e=>{if(e.target===mo)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mo.classList.contains('open'))closeModal();});
+
+/* ══ FORM ══ */
+function handleForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.innerHTML='<i class="fa-solid fa-check"></i> Sent!';
+  btn.style.background='linear-gradient(135deg,#059669,#10b981)';
+  btn.style.boxShadow='0 0 30px rgba(5,150,105,.4)';
+  setTimeout(()=>{
+    btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';
+    btn.style.background=''; btn.style.boxShadow=''; e.target.reset();
+  },3000);
+}
+
+/* ══ NAV ══ */
+function toggleNav(){
+  const links=document.querySelector('.nav-links');
+  if(links.style.display==='flex'){links.style.display='';}
+  else{links.style.cssText='display:flex;flex-direction:column;position:absolute;top:58px;left:0;right:0;background:rgba(7,9,26,.97);padding:1.4rem 2rem;gap:1.1rem;border-bottom:1px solid rgba(255,255,255,.08);z-index:99';}
+}
+</script>
+</body>
+</html>
