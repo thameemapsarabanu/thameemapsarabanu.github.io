@@ -694,7 +694,7 @@ footer{padding:1.5rem 3rem;border-top:1px solid var(--gb);display:flex;align-ite
       </div>
     </div>
     <div class="rv">
-      <form class="c-form" id="contact-form" action="https://formspree.io/f/mrpeokny" method="POST">
+      <form class="c-form" id="contact-form" action="https://formspree.io/f/mrpeokny" method="POST" onsubmit="handleForm(event)">
         <div class="fg"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
         <div class="fg"><label>Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
         <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
@@ -1037,18 +1037,22 @@ async function handleForm(e){
       body:new FormData(form),
       headers:{Accept:'application/json'}
     });
-    if(res.ok){
+    const data=await res.json();
+    console.log('Formspree status:',res.status,'response:',JSON.stringify(data));
+    if(res.ok && !data.errors){
       btn.innerHTML='<i class="fa-solid fa-check"></i> Message Sent!';
       btn.style.background='linear-gradient(135deg,#059669,#10b981)';
       btn.style.boxShadow='0 0 30px rgba(5,150,105,.4)';
       form.reset();
       setTimeout(()=>{btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';btn.style.background='';btn.style.boxShadow='';btn.disabled=false;},4000);
     }else{
+      console.error('Formspree error:',data);
       btn.innerHTML='<i class="fa-solid fa-triangle-exclamation"></i> Try Again';
       btn.style.background='linear-gradient(135deg,#dc2626,#ef4444)';
       setTimeout(()=>{btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';btn.style.background='';btn.disabled=false;},3000);
     }
-  }catch{
+  }catch(err){
+    console.error('Fetch error:',err);
     btn.innerHTML='<i class="fa-solid fa-triangle-exclamation"></i> Try Again';
     btn.style.background='linear-gradient(135deg,#dc2626,#ef4444)';
     setTimeout(()=>{btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';btn.style.background='';btn.disabled=false;},3000);
