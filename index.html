@@ -694,10 +694,10 @@ footer{padding:1.5rem 3rem;border-top:1px solid var(--gb);display:flex;align-ite
       </div>
     </div>
     <div class="rv">
-      <form class="c-form" onsubmit="handleForm(event)">
-        <div class="fg"><label>Name</label><input type="text" placeholder="Your name" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com" required></div>
-        <div class="fg"><label>Message</label><textarea placeholder="Tell me about your project..." required></textarea></div>
+      <form class="c-form" id="contact-form" action="https://formspree.io/f/mrpeokny" method="POST">
+        <div class="fg"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
+        <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
         <button type="submit" class="btn-p" style="align-self:flex-start;border:none"><i class="fa-solid fa-paper-plane"></i>Send Message</button>
       </form>
     </div>
@@ -1025,16 +1025,34 @@ mo.addEventListener('click',e=>{if(e.target===mo)closeModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mo.classList.contains('open'))closeModal();});
 
 /* ══ FORM ══ */
-function handleForm(e){
+async function handleForm(e){
   e.preventDefault();
-  const btn=e.target.querySelector('button');
-  btn.innerHTML='<i class="fa-solid fa-check"></i> Sent!';
-  btn.style.background='linear-gradient(135deg,#059669,#10b981)';
-  btn.style.boxShadow='0 0 30px rgba(5,150,105,.4)';
-  setTimeout(()=>{
-    btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';
-    btn.style.background=''; btn.style.boxShadow=''; e.target.reset();
-  },3000);
+  const form=e.target;
+  const btn=form.querySelector('button');
+  btn.disabled=true;
+  btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+  try{
+    const res=await fetch('https://formspree.io/f/mrpeokny',{
+      method:'POST',
+      body:new FormData(form),
+      headers:{Accept:'application/json'}
+    });
+    if(res.ok){
+      btn.innerHTML='<i class="fa-solid fa-check"></i> Message Sent!';
+      btn.style.background='linear-gradient(135deg,#059669,#10b981)';
+      btn.style.boxShadow='0 0 30px rgba(5,150,105,.4)';
+      form.reset();
+      setTimeout(()=>{btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';btn.style.background='';btn.style.boxShadow='';btn.disabled=false;},4000);
+    }else{
+      btn.innerHTML='<i class="fa-solid fa-triangle-exclamation"></i> Try Again';
+      btn.style.background='linear-gradient(135deg,#dc2626,#ef4444)';
+      setTimeout(()=>{btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';btn.style.background='';btn.disabled=false;},3000);
+    }
+  }catch{
+    btn.innerHTML='<i class="fa-solid fa-triangle-exclamation"></i> Try Again';
+    btn.style.background='linear-gradient(135deg,#dc2626,#ef4444)';
+    setTimeout(()=>{btn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Send Message';btn.style.background='';btn.disabled=false;},3000);
+  }
 }
 
 /* ══ NAV ══ */
